@@ -1,16 +1,18 @@
 import { Moon, SunMoon } from "lucide-react";
 import { useState } from "react";
 
+const lightTheme = "light";
+const darkTheme = "dark";
+
 const ThemeToggler = () => {
   const [dark, setDark] = useState(
     localStorage.getItem("theme") === "dark" ? true : false
   );
+
   const root = window.document.documentElement;
-  const lightTheme = "light";
-  const darkTheme = "dark";
-  let theme;
+  let theme: typeof lightTheme | typeof darkTheme;
   if (localStorage) {
-    theme = localStorage.getItem("theme");
+    theme = localStorage.getItem("theme") as typeof theme;
   }
   if (theme === lightTheme || theme === darkTheme) {
     root.classList.add(theme);

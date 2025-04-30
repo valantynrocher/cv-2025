@@ -1,4 +1,6 @@
 // tailwind.config.js
+const vertSapin = "#004f3b";
+const jauneClair = "#fef9c2";
 
 module.exports = {
   content: ["./index.html", "./src/**/*.{js,jsx,ts,tsx}"],
@@ -7,12 +9,12 @@ module.exports = {
     extend: {
       colors: {
         primary: {
-          light: "#fef9c2",
-          dark: "#004f3b",
+          light: jauneClair,
+          dark: vertSapin,
         },
         secondary: {
-          light: "#004f3b",
-          dark: "#fef9c2",
+          light: vertSapin,
+          dark: jauneClair,
         },
         typo: {
           light: "#E0E0E0",

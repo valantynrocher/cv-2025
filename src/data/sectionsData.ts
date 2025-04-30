@@ -1,11 +1,18 @@
 import { SectionData } from "@/types";
+import {
+  GraduationCap,
+  House,
+  Send,
+  SquareUserRound,
+  Waypoints,
+} from "lucide-react";
 
 const sectionsData: SectionData[] = [
   {
     id: "home",
     label: "Accueil",
     link: "#home", // Lien vers la section
-    icon: "home-icon", // Optionnel
+    icon: House, // Optionnel
     visibleInMenu: true, // Affiché dans la sidebar ?
     visibleInSection: true, // Affiché dans la section correspondante ?
     content: "Bienvenue sur mon portfolio !", // Contenu de la section
@@ -14,7 +21,7 @@ const sectionsData: SectionData[] = [
     id: "about",
     label: "À propos",
     link: "#about",
-    icon: "about-icon",
+    icon: SquareUserRound,
     visibleInMenu: true,
     visibleInSection: true,
     content: "Je suis développeur web passionné...",
@@ -23,7 +30,7 @@ const sectionsData: SectionData[] = [
     id: "experience",
     label: "Expérience",
     link: "#experience",
-    icon: "experience-icon",
+    icon: Waypoints,
     visibleInMenu: true,
     visibleInSection: true,
     content: "Voici mes expériences...",
@@ -32,7 +39,7 @@ const sectionsData: SectionData[] = [
     id: "formation",
     label: "Formation",
     link: "#formation",
-    icon: "formation-icon",
+    icon: GraduationCap,
     visibleInMenu: true,
     visibleInSection: true,
     content: "Voici mes formations...",
@@ -41,7 +48,7 @@ const sectionsData: SectionData[] = [
     id: "contact",
     label: "Contactez-moi",
     link: "#contact",
-    icon: "contact-icon",
+    icon: Send,
     visibleInMenu: true,
     visibleInSection: true,
     content: "Vous pouvez me contacter par email...",

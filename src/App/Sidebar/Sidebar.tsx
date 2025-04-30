@@ -1,20 +1,23 @@
-import ThemeToggler from "@/App/ThemeToggler";
-import { sectionsData } from "@/data";
-import { useEffect } from "react";
-import { Link, scrollSpy } from "react-scroll";
+import NavigationList from "@/App/Sidebar/NavigationList";
+import { useSidebar } from "@/App/Sidebar/SidebarContext";
+import SidebarToggler from "@/App/Sidebar/SidebarToggler";
+import ThemeToggler from "@/App/Sidebar/ThemeToggler";
+import { SIDEBAR_WIDTH } from "@/constants";
 
 const Sidebar = () => {
-  const visibleSections = sectionsData.filter(
-    (section) => section.visibleInMenu
-  );
-
-  useEffect(() => {
-    scrollSpy.update();
-  }, []);
+  const { isOpen } = useSidebar();
 
   return (
-    <div className="fixed top-0 left-0 h-full w-56 p-4 bg-primary-light dark:bg-primary-dark border-secondary-light dark:border-secondary-dark border-solid border-r">
-      <div className="flex justify-between items-center">
+    <div
+      className={`w-${
+        isOpen ? SIDEBAR_WIDTH.OPEN : SIDEBAR_WIDTH.CLOSED
+      } flex flex-col p-4 bg-primary-light dark:bg-primary-dark fixed top-0 left-0  h-full border-secondary-light dark:border-secondary-dark border-solid border-r`}
+    >
+      <div
+        className={`${
+          isOpen ? "flex" : "flex-col"
+        } justify-between items-center`}
+      >
         <div
           style={{
             lineHeight: "3rem",
@@ -24,25 +27,15 @@ const Sidebar = () => {
         >
           V
         </div>
-        <div className="">
+        {!isOpen ? <div className="h-6" /> : null}
+        <div className={`flex ${!isOpen ? "flex-col" : ""}`}>
           <ThemeToggler />
+          <div className={`${isOpen ? "w-2" : "h-2"}`} />
+          <SidebarToggler />
         </div>
       </div>
-      <div className="relative text-center top-1/2 -translate-y-1/2">
-        {visibleSections.map((section) => (
-          <Link
-            key={section.id}
-            to={section.id}
-            smooth={true}
-            duration={500}
-            spy={true}
-            offset={-50}
-            className="p-2 cursor-pointer rounded transition block text-secondary-light dark:text-secondary-dark"
-            activeClass="bg-jaune text-vertSapin"
-          >
-            {section.label}
-          </Link>
-        ))}
+      <div className="relative text-center m-auto">
+        <NavigationList />
       </div>
     </div>
   );
