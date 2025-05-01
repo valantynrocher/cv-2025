@@ -46,7 +46,7 @@ const sectionsData: SectionData[] = [
   },
   {
     id: "contact",
-    label: "Contactez-moi",
+    label: "Contact",
     link: "#contact",
     icon: Send,
     visibleInMenu: true,

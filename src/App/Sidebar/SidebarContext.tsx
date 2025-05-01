@@ -1,8 +1,12 @@
 import { createContext, useContext, useState, ReactNode } from "react";
 
+type SidebarPosition = "left" | "right" | "top" | "bottom";
+
 type SidebarContextType = {
   isOpen: boolean;
+  position: SidebarPosition;
   toggleSidebar: () => void;
+  changePosition: (newPosition: SidebarPosition) => void;
 };
 
 const SidebarContext = createContext<SidebarContextType | undefined>(undefined);
@@ -10,6 +14,9 @@ const SidebarContext = createContext<SidebarContextType | undefined>(undefined);
 export const SidebarProvider = ({ children }: { children: ReactNode }) => {
   const [isOpen, setIsOpen] = useState(
     localStorage.getItem("isSidebarOpen") === "false" ? false : true
+  );
+  const [position, setPosition] = useState<SidebarPosition>(
+    (localStorage.getItem("sidebarPosition") as SidebarPosition) || "left"
   );
 
   const toggleSidebar = () =>
@@ -19,8 +26,19 @@ export const SidebarProvider = ({ children }: { children: ReactNode }) => {
       return next;
     });
 
+  const changePosition = (newPosition: SidebarPosition) => {
+    setPosition((previous) => {
+      if (newPosition !== previous) {
+        localStorage.setItem("sidebarPosition", newPosition);
+        return newPosition;
+      }
+    });
+  };
+
   return (
-    <SidebarContext.Provider value={{ isOpen, toggleSidebar }}>
+    <SidebarContext.Provider
+      value={{ isOpen, position, toggleSidebar, changePosition }}
+    >
       {children}
     </SidebarContext.Provider>
   );

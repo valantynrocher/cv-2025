@@ -1,3 +1,4 @@
+import ActionIconButton from "@/Components/ActionIconButton";
 import { Moon, SunMoon } from "lucide-react";
 import { useState } from "react";
 
@@ -20,7 +21,7 @@ const ThemeToggler = () => {
     root.classList.add(lightTheme);
   }
 
-  const handleChange = () => {
+  const handleOnClick = () => {
     if (theme === darkTheme) {
       root.classList.replace(darkTheme, lightTheme);
       localStorage.setItem("theme", "light");
@@ -34,12 +35,7 @@ const ThemeToggler = () => {
   };
 
   return (
-    <button
-      onClick={handleChange}
-      className="p-2 rounded bg-primary-dark dark:bg-primary-light text-secondary-dark dark:text-secondary-light"
-    >
-      <>{dark ? <SunMoon /> : <Moon />}</>
-    </button>
+    <ActionIconButton onClick={handleOnClick} icon={dark ? SunMoon : Moon} />
   );
 };
 

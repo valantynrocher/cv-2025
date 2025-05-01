@@ -9,13 +9,18 @@ const NavigationList = () => {
 
   return (
     <>
-      {visibleSections.map((section) => (
-        <NavigationItem
-          key={section.id}
-          section={section}
-          isActive={activeSection === section.id}
-        />
-      ))}
+      {visibleSections.map((section, idx, array) => {
+        return (
+          <>
+            <NavigationItem
+              key={section.id}
+              section={section}
+              isActive={activeSection === section.id}
+            />
+            {idx < array.length - 1 ? <div className="h-2" /> : null}
+          </>
+        );
+      })}
     </>
   );
 };
