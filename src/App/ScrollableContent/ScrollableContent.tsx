@@ -11,7 +11,7 @@ const ScrollableContent = () => {
     <div className="h-screen w-full">
       <div
         id="scrollable-content"
-        className={`flex flex-col pl-12 pr-12 bg-primary-light dark:bg-primary-dark
+        className={`flex flex-col pl-12 pr-12 bg-primary-light dark:bg-primary-dark text-secondary-light dark:text-secondary-dark
         ${
           isOpen
             ? CLASSES.sidebarOpen[position]?.scrollableContentClassname || ""
@@ -24,8 +24,10 @@ const ScrollableContent = () => {
           <Section
             key={section.id}
             id={section.id}
-            title={section.label}
-            className="last:min-h-0"
+            title={section.title}
+            displayTitle={section.displayTitle}
+            content={section.content}
+            classes={section.classes}
           />
         ))}
         {position === "bottom" ? <div className="h-20" /> : null}

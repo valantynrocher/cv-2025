@@ -1,3 +1,4 @@
+import HomeSection from "@/App/ScrollableContent/HomeSection";
 import { SectionData } from "@/types";
 import {
   GraduationCap,
@@ -10,48 +11,52 @@ import {
 const sectionsData: SectionData[] = [
   {
     id: "home",
-    label: "Accueil",
-    link: "#home", // Lien vers la section
+    title: "Accueil",
+    displayTitle: false,
     icon: House, // Optionnel
     visibleInMenu: true, // Affiché dans la sidebar ?
     visibleInSection: true, // Affiché dans la section correspondante ?
-    content: "Bienvenue sur mon portfolio !", // Contenu de la section
+    content: HomeSection,
+    classes: {
+      main: "h-[calc(100vh-80px)]",
+      content: "text-center",
+    },
   },
   {
     id: "about",
-    label: "À propos",
-    link: "#about",
+    title: "À propos",
+    displayTitle: true,
     icon: SquareUserRound,
     visibleInMenu: true,
     visibleInSection: true,
-    content: "Je suis développeur web passionné...",
+    content: () => "Je suis développeur web passionné...",
   },
   {
     id: "experience",
-    label: "Expérience",
-    link: "#experience",
+    title: "Expérience",
+    displayTitle: true,
     icon: Waypoints,
     visibleInMenu: true,
     visibleInSection: true,
-    content: "Voici mes expériences...",
+    content: () => "Voici mes expériences...",
   },
   {
     id: "formation",
-    label: "Formation",
-    link: "#formation",
+    title: "Formation",
+    displayTitle: true,
     icon: GraduationCap,
     visibleInMenu: true,
     visibleInSection: true,
-    content: "Voici mes formations...",
+    content: () => "Voici mes formations...",
   },
   {
     id: "contact",
-    label: "Contact",
-    link: "#contact",
+    title: "Contact",
+    displayTitle: true,
     icon: Send,
     visibleInMenu: true,
     visibleInSection: true,
-    content: "Vous pouvez me contacter par email...",
+    content: () => "Vous pouvez me contacter par email...",
   },
 ];
 

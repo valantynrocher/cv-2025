@@ -5,7 +5,7 @@ import { Link } from "react-scroll";
 
 const NavigationItem = (props: NavigationItemProps) => {
   const {
-    section: { id, icon: Icon, label },
+    section: { id, icon: Icon, title },
     isActive,
   } = props;
 
@@ -25,7 +25,7 @@ const NavigationItem = (props: NavigationItemProps) => {
         }`}
       {...DEFAULT_SCROLL_PROPS}
     >
-      {displayLabel ? label : <Icon />}
+      {displayLabel ? title : <Icon />}
     </Link>
   );
 };

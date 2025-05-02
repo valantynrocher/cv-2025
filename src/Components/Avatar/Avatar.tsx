@@ -1,28 +1,30 @@
 import { useSidebar } from "@/App/Sidebar/SidebarContext";
-import avatar from "@/assets/avatar.jpeg";
 import { CLASSES } from "@/constants";
+import { AvatarProps } from "./AvatarProps";
 
-const Avatar = () => {
+const Avatar = (props: AvatarProps) => {
+  const { src, classes } = props;
   const { isOpen, position } = useSidebar();
   return (
     <div
-      className={`rounded-full overflow-hidden border border-secondary-light dark:border-secondary-dark flex items-center justify-center bg-secondary-dark text-white font-bold
+      className={`flex items-center justify-center rounded-full overflow-hidden border border-secondary-light dark:border-secondary-dark bg-secondary-dark text-white font-bold
         ${
           isOpen
             ? CLASSES.sidebarOpen[position]?.avatarClassname || ""
             : CLASSES.sidebarClose[position]?.avatarClassname || ""
         }
       ${CLASSES.sidebarPosition[position].avatarClassname}
+      ${classes?.main || ""}
       `}
     >
-      {avatar ? (
+      {src ? (
         <img
-          src={avatar}
+          src={src}
           alt="Avatar Valentin Rocher"
-          className="w-full h-full object-cover"
+          className={`${classes?.img || ""} w-full h-full object-cover`}
         />
       ) : (
-        <span className="absolute">V</span>
+        <span className={`${classes?.fallback || ""} absolute`}>V</span>
       )}
     </div>
   );

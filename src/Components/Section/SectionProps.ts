@@ -1,7 +1,8 @@
-type SectionProps = {
-  id: string;
-  title: string;
-  className?: string;
-};
+import { SectionData } from "@/types";
+
+type SectionProps = Pick<
+  SectionData,
+  "id" | "title" | "displayTitle" | "content" | "classes"
+>;
 
 export default SectionProps;

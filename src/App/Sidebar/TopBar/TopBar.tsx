@@ -1,8 +1,9 @@
-import Avatar from "@/App/Sidebar/TopBar/Avatar";
+import Avatar from "@/Components/Avatar";
 import { useSidebar } from "@/App/Sidebar/SidebarContext";
 import SidebarToggler from "@/App/Sidebar/TopBar/SidebarToggler";
 import ThemeToggler from "@/App/Sidebar/TopBar/ThemeToggler";
 import { CLASSES } from "@/constants";
+import avatar from "@/assets/avatar.jpeg";
 
 const TopBar = () => {
   const { isOpen, position } = useSidebar();
@@ -16,7 +17,7 @@ const TopBar = () => {
       }
       ${CLASSES.sidebarPosition[position].topBarClassname}`}
     >
-      <Avatar />
+      <Avatar src={avatar} />
       {isOpen ? null : <div className="h-4" />}
       {["top", "bottom"].includes(position) ? <div className="w-4" /> : null}
       <div
