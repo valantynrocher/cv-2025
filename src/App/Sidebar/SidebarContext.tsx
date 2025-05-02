@@ -1,6 +1,6 @@
 import { createContext, useContext, useState, ReactNode } from "react";
 
-type SidebarPosition = "left" | "right" | "top" | "bottom";
+export type SidebarPosition = "left" | "right" | "top" | "bottom";
 
 type SidebarContextType = {
   isOpen: boolean;

@@ -1,25 +1,35 @@
 import { useSidebar } from "@/App/Sidebar";
 import Section from "@/Components/Section";
-import { SIZES } from "@/constants";
+import { CLASSES } from "@/constants";
 import { sectionsData } from "@/data";
-import { clsx } from "clsx";
 
 const ScrollableContent = () => {
   const { isOpen, position } = useSidebar();
   const visibleSections = sectionsData.filter((s) => s.visibleInSection);
 
   return (
-    <div
-      className={clsx(
-        "flex-1",
-        isOpen
-          ? SIZES.sidebarOpen.contentMargin[position]
-          : SIZES.sidebarClose.contentMargin[position]
-      )}
-    >
-      {visibleSections.map((section) => (
-        <Section key={section.id} id={section.id} title={section.label} />
-      ))}
+    <div className="h-screen w-full">
+      <div
+        id="scrollable-content"
+        className={`flex flex-col pl-12 pr-12 bg-primary-light dark:bg-primary-dark
+        ${
+          isOpen
+            ? CLASSES.sidebarOpen[position]?.scrollableContentClassname || ""
+            : CLASSES.sidebarClose[position]?.scrollableContentClassname || ""
+        } 
+      `}
+      >
+        {position === "top" ? <div className="h-20" /> : null}
+        {visibleSections.map((section) => (
+          <Section
+            key={section.id}
+            id={section.id}
+            title={section.label}
+            className="last:min-h-0"
+          />
+        ))}
+        {position === "bottom" ? <div className="h-20" /> : null}
+      </div>
     </div>
   );
 };

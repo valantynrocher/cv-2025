@@ -9,20 +9,23 @@ const NavigationItem = (props: NavigationItemProps) => {
     isActive,
   } = props;
 
-  const { isOpen } = useSidebar();
+  const { isOpen, position } = useSidebar();
+
+  const displayLabel = ["top", "bottom"].includes(position) || isOpen;
 
   return (
     <Link
       key={id}
       to={id}
-      className={`${
-        isActive
-          ? "bg-primary-dark dark:bg-primary-light text-secondary-dark dark:text-secondary-light"
-          : "text-secondary-light dark:text-secondary-dark"
-      } p-2 cursor-pointer rounded transition block `}
+      className={`p-2 cursor-pointer rounded transition block
+        ${
+          isActive
+            ? "bg-primary-dark dark:bg-primary-light text-secondary-dark dark:text-secondary-light"
+            : "text-secondary-light dark:text-secondary-dark"
+        }`}
       {...DEFAULT_SCROLL_PROPS}
     >
-      {isOpen ? label : <Icon />}
+      {displayLabel ? label : <Icon />}
     </Link>
   );
 };
