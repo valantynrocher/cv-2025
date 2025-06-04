@@ -1,3 +1,4 @@
-import sectionsData from "./sectionsData";
+import contentsData from "./contentsData";
+import experiencesData from "./experiencesData";
 
-export { sectionsData };
+export { contentsData, experiencesData };

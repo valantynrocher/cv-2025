@@ -3,7 +3,7 @@ import { PanelBottom, PanelLeft, PanelRight, PanelTop } from "lucide-react";
 import { ToggleGroup } from "radix-ui";
 
 const toggleGroupItemClasses =
-  "p-2 rounded-none border-r-0 w-[32px] last:border-r first:rounded-l last:rounded-r bg-transparent text-secondary-light dark:text-secondary-dark border-secondary-light dark:border-secondary-dark hover:bg-secondary-light dark:hover:bg-secondary-dark hover:text-primary-light dark:hover:text-primary-dark focus:z-10 focus:outline-none data-[state=on]:bg-secondary-light dark:data-[state=on]:bg-secondary-dark data-[state=on]:text-primary-light dark:data-[state=on]:text-primary-dark";
+  "p-2 rounded-none border-r-0 w-[32px] last:border-r first:rounded-l last:rounded-r bg-transparent text-secondary-light dark:text-secondary-dark border-secondary-light hover:border-secondary-light dark:border-secondary-dark hover:bg-secondary-light hover:bg-opacity-50 dark:hover:bg-secondary-dark dark:hover:bg-opacity-50 focus:z-10 focus:outline-none data-[state=on]:bg-secondary-light dark:data-[state=on]:bg-secondary-dark data-[state=on]:text-primary-light dark:data-[state=on]:text-primary-dark";
 
 const ToggleGroupRenderer = () => {
   const { position, changePosition } = useSidebar();

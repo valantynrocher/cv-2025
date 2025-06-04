@@ -1,12 +1,12 @@
-import Avatar from "@/Components/Avatar";
 import { useSidebar } from "@/App/Sidebar/SidebarContext";
 import SidebarToggler from "@/App/Sidebar/TopBar/SidebarToggler";
 import ThemeToggler from "@/App/Sidebar/TopBar/ThemeToggler";
-import { CLASSES } from "@/constants";
 import avatar from "@/assets/avatar.jpeg";
+import Avatar from "@/Components/Avatar";
+import { CLASSES } from "@/constants";
 
 const TopBar = () => {
-  const { isOpen, position } = useSidebar();
+  const { isOpen, position, isHorizontalSidebar } = useSidebar();
 
   return (
     <div
@@ -17,9 +17,18 @@ const TopBar = () => {
       }
       ${CLASSES.sidebarPosition[position].topBarClassname}`}
     >
-      <Avatar src={avatar} />
+      <Avatar
+        classes={{
+          main: `${
+            isOpen
+              ? CLASSES.sidebarOpen[position]?.topBarAvatarClassname || ""
+              : CLASSES.sidebarClose[position]?.topBarAvatarClassname || ""
+          } ${CLASSES.sidebarPosition[position].topBarAvatarClassname}`,
+        }}
+        src={avatar}
+      />
       {isOpen ? null : <div className="h-4" />}
-      {["top", "bottom"].includes(position) ? <div className="w-4" /> : null}
+      {isHorizontalSidebar ? <div className="w-4" /> : null}
       <div
         className={`flex ${
           isOpen

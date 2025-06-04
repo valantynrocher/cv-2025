@@ -3,11 +3,15 @@ import DropdownMenuRenderer from "@/App/Sidebar/SidebarPositionToggler/DropdownM
 import ToggleGroupRenderer from "@/App/Sidebar/SidebarPositionToggler/ToggleGroupRenderer";
 
 const SidebarPositionToggler = () => {
-  const { isOpen } = useSidebar();
+  const { isOpen, isHorizontalSidebar } = useSidebar();
 
   return (
     <div className="flex justify-center h-(32px)">
-      {isOpen ? <ToggleGroupRenderer /> : <DropdownMenuRenderer />}
+      {isHorizontalSidebar || isOpen ? (
+        <ToggleGroupRenderer />
+      ) : (
+        <DropdownMenuRenderer />
+      )}
     </div>
   );
 };

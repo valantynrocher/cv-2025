@@ -1,6 +1,6 @@
-import { SectionData } from "@/types";
+import { ContentData } from "@/types";
 
 export type NavigationItemProps = {
-  section: SectionData;
+  section: ContentData;
   isActive: boolean;
 };

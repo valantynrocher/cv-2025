@@ -1,4 +1,5 @@
 import Sidebar from "./Sidebar";
 import { useSidebar, SidebarProvider } from "./SidebarContext";
 
-export { Sidebar, useSidebar, SidebarProvider };
+export default Sidebar;
+export { useSidebar, SidebarProvider };

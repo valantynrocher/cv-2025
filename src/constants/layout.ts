@@ -5,7 +5,7 @@ export const CLASSES = {
       navigationListClassname: "flex-col",
       topBarClassname: "",
       topBarActionsClassname: "",
-      avatarClassname: "",
+      topBarAvatarClassname: "",
     },
     top: {
       sidebarClassname:
@@ -13,7 +13,7 @@ export const CLASSES = {
       navigationListClassname: "",
       topBarClassname: "flex items-center justify-between",
       topBarActionsClassname: "items-center",
-      avatarClassname: "w-16 h-16 m-auto",
+      topBarAvatarClassname: "w-16 h-16 m-auto",
     },
     bottom: {
       sidebarClassname:
@@ -21,14 +21,14 @@ export const CLASSES = {
       navigationListClassname: "",
       topBarClassname: "flex items-center justify-between",
       topBarActionsClassname: "items-center",
-      avatarClassname: "w-16 h-16 m-auto",
+      topBarAvatarClassname: "w-16 h-16 m-auto",
     },
     right: {
       sidebarClassname: "top-0 right-0 border-l flex-col h-full",
       navigationListClassname: "flex-col",
       topBarClassname: "",
       topBarActionsClassname: "",
-      avatarClassname: "",
+      topBarAvatarClassname: "",
     },
   },
   sidebarOpen: {
@@ -37,14 +37,14 @@ export const CLASSES = {
       sidebarClassname: "w-56",
       topBarClassname: "flex items-center justify-between",
       topBarActionsClassname: "",
-      avatarClassname: "w-16 h-16",
+      topBarAvatarClassname: "w-16 h-16",
     },
     right: {
       scrollableContentClassname: "mr-56",
       sidebarClassname: "w-56",
       topBarClassname: "flex items-center justify-between",
       topBarActionsClassname: "",
-      avatarClassname: "w-16 h-16",
+      topBarAvatarClassname: "w-16 h-16",
     },
   },
   sidebarClose: {
@@ -53,14 +53,14 @@ export const CLASSES = {
       sidebarClassname: "w-20",
       topBarClassname: "flex flex-col items-center justify-between",
       topBarActionsClassname: "flex-col items-center",
-      avatarClassname: "w-full h-auto m-auto",
+      topBarAvatarClassname: "w-full h-auto m-auto",
     },
     right: {
       scrollableContentClassname: "mr-20",
       sidebarClassname: "w-20",
       topBarClassname: "flex flex-col items-center justify-between",
       topBarActionsClassname: "flex-col items-center",
-      avatarClassname: "w-full h-auto m-auto",
+      topBarAvatarClassname: "w-full h-auto m-auto",
     },
   },
 };

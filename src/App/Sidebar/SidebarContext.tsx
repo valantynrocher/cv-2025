@@ -7,6 +7,8 @@ type SidebarContextType = {
   position: SidebarPosition;
   toggleSidebar: () => void;
   changePosition: (newPosition: SidebarPosition) => void;
+  isHorizontalSidebar: boolean;
+  isVerticalSidebar: boolean;
 };
 
 const SidebarContext = createContext<SidebarContextType | undefined>(undefined);
@@ -18,6 +20,9 @@ export const SidebarProvider = ({ children }: { children: ReactNode }) => {
   const [position, setPosition] = useState<SidebarPosition>(
     (localStorage.getItem("sidebarPosition") as SidebarPosition) || "left"
   );
+
+  const isHorizontalSidebar = ["top", "bottom"].includes(position);
+  const isVerticalSidebar = ["left", "right"].includes(position);
 
   const toggleSidebar = () =>
     setIsOpen((previous) => {
@@ -37,7 +42,14 @@ export const SidebarProvider = ({ children }: { children: ReactNode }) => {
 
   return (
     <SidebarContext.Provider
-      value={{ isOpen, position, toggleSidebar, changePosition }}
+      value={{
+        isOpen,
+        position,
+        toggleSidebar,
+        changePosition,
+        isHorizontalSidebar,
+        isVerticalSidebar,
+      }}
     >
       {children}
     </SidebarContext.Provider>

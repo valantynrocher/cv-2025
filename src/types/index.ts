@@ -1,3 +1,4 @@
-import { SectionData } from "./SectionData";
+import ContentData from "./ContentData";
+import ExperienceData from "./ExperienceData";
 
-export type { SectionData };
+export type { ContentData, ExperienceData };
