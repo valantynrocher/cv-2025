@@ -10,7 +10,12 @@ const HomeSection = () => {
           main: "w-[150px] h-auto",
         }}
       />
-      Bienvenue sur mon portfolio !
+      <h1>Valentin Rocher</h1>
+      <h2>Développeur front-end TypeScript / React </h2>
+      <h3>
+        + de 3 ans d’expérience | Polyvalent | Curieux | De retour d'une pause
+        professionnelle dédiée au voyage.
+      </h3>
     </>
   );
 };

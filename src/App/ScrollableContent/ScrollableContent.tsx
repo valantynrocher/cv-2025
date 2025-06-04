@@ -1,11 +1,11 @@
 import { useSidebar } from "@/App/Sidebar";
 import Section from "@/Components/Section";
 import { CLASSES } from "@/constants";
-import { sectionsData } from "@/data";
+import { contentsData } from "@/data";
 
 const ScrollableContent = () => {
   const { isOpen, position } = useSidebar();
-  const visibleSections = sectionsData.filter((s) => s.visibleInSection);
+  const sections = contentsData.filter((s) => s.content !== null);
 
   return (
     <div className="h-screen w-full">
@@ -20,14 +20,13 @@ const ScrollableContent = () => {
       `}
       >
         {position === "top" ? <div className="h-20" /> : null}
-        {visibleSections.map((section) => (
+        {sections.map((section) => (
           <Section
             key={section.id}
             id={section.id}
             title={section.title}
             displayTitle={section.displayTitle}
             content={section.content}
-            classes={section.classes}
           />
         ))}
         {position === "bottom" ? <div className="h-20" /> : null}

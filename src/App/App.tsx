@@ -1,5 +1,5 @@
-import ScrollableContent from "./ScrollableContent/ScrollableContent";
-import { Sidebar } from "./Sidebar";
+import ScrollableContent from "./ScrollableContent";
+import Sidebar from "./Sidebar";
 
 const App = () => {
   return (

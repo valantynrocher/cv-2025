@@ -1,0 +1,9 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+	<title>Nouveau projet</title>
+	<defs>
+		<image width="96" height="96" id="img1" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWJhY2twYWNrLWljb24gbHVjaWRlLWJhY2twYWNrIj48cGF0aCBkPSJNNCAxMGE0IDQgMCAwIDEgNC00aDhhNCA0IDAgMCAxIDQgNHYxMGEyIDIgMCAwIDEtMiAySDZhMiAyIDAgMCAxLTItMnoiLz48cGF0aCBkPSJNOCAxMGg4Ii8+PHBhdGggZD0iTTggMThoOCIvPjxwYXRoIGQ9Ik04IDIydi02YTIgMiAwIDAgMSAyLTJoNGEyIDIgMCAwIDEgMiAydjYiLz48cGF0aCBkPSJNOSA2VjRhMiAyIDAgMCAxIDItMmgyYTIgMiAwIDAgMSAyIDJ2MiIvPjwvc3ZnPg=="/>
+	</defs>
+	<style>
+	</style>
+	<use id="backpack" href="#img1" transform="matrix(1.359,0,0,1.359,34.713,34.713)"/>
+</svg>
